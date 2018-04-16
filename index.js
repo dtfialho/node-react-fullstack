@@ -7,7 +7,7 @@ require('./services/passport');
 
 const keys = require('./config/keys');
 
-mongoose.connect('mongodb://ds233769.mlab.com:33769/emaily-dev', {
+mongoose.connect(kes.mongoUri, {
   user: keys.mongoUsername,
   pass: keys.mongoPassword
 });
