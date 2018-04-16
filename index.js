@@ -7,7 +7,7 @@ require('./services/passport');
 
 const keys = require('./config/keys');
 
-mongoose.connect(kes.mongoUri, {
+mongoose.connect(keys.mongoUri, {
   user: keys.mongoUsername,
   pass: keys.mongoPassword
 });
