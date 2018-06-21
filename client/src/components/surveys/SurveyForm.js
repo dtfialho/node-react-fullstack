@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
 import SurveyField from './SurveyField';
+import validateEmails from '../../utils/validateEmails';
 
 const FIELDS = [
   { name: 'title', label: 'Survey Title' },
@@ -41,6 +42,8 @@ class SurveyForm extends Component {
 
 function validate(values) {
   let errors = {};
+
+  errors.emails = validateEmails(values.emails || '');
 
   _.each(FIELDS, ({ name }) => {
     if (!values[name]) {
