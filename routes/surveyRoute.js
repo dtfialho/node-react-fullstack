@@ -9,7 +9,12 @@ const Survey = mongoose.model('surveys');
 module.exports = app => {
   app.get('/api/surveys/thanks', (req, res) => {
     res.send('Thanks for your answer!');
-  })
+  });
+
+  app.post('/api/surveys/webhooks', (req, res) => {
+    console.log(req.body);
+    res.send({});
+  });
 
   app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
     const { title, subject, body, recipients } = req.body;
